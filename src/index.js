@@ -8,6 +8,7 @@ app.use(cors());
 app.use(checkCache)
 
 const router = express.Router();
+const BASE_ROUTE = '/.netlify/functions/index'
 
 router.get('/pontal', getPontal,() => {
 });
@@ -27,7 +28,12 @@ router.get('/jeribucacu', getJeribucacu,() => {
 router.get('/tiririca', getTirica,() => {
 });
 
+router.get('/test', (req, res) => {
+  res.json({
+    "hello": "world"
+  })
+})
 
-app.use('/.netlify/functions/api', router);
+app.use(BASE_ROUTE, router);
 
 module.exports.handler = serverless(app);
