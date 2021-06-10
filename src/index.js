@@ -5,7 +5,7 @@ const {getCorals, getHavaizinho, getPontal, getJeribucacu, getTirica, getItacare
 
 const app = express();
 app.use(cors());
-app.use(checkCache())
+app.use(checkCache)
 
 const router = express.Router();
 const BASE_ROUTE = '/.netlify/functions/index'
