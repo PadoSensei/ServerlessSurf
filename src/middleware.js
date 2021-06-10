@@ -4,7 +4,7 @@ const client = require('./redis')
 const checkCache = (req, res, next) => {
   client.get('beachData', (err, reply) =>{
     if(!reply){
-      scrapeData()
+      scrapeData(client)
       console.log("Scraping Data...")
     }else {
       console.log('Data already in Redis!')

@@ -36,5 +36,6 @@ router.get('/test', (req, res) => {
 
 app.use(BASE_ROUTE, router);
 
+console.log("hello")
 
 module.exports.handler = serverless(app);
