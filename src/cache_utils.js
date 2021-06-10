@@ -77,7 +77,7 @@ async function pushObjToRedis(key, obj, client) {
 }
 
 async function getDataFromRedis(client){
- client.get('BeachData', function(err, reply) {
+ client.get('beachData', function(err, reply) {
   console.log(reply)
  })
 }
