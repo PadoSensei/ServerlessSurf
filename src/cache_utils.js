@@ -62,8 +62,8 @@ const scrapeData = async (client) => {
 async function pushObjToRedis(key, obj, client) {
 
   try {
-      //const key = 'BeachData';
-      await client.set(key, JSON.stringify(obj));
+      //const key = 'BeachData' set to expire in 6 hours
+      await client.set(key, JSON.stringify(obj), 'ex', '21600');
 
       // Turn around and test immediately to prove it works.
       const response = JSON.parse(await client.get(key));
