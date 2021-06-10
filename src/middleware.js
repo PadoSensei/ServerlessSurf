@@ -12,7 +12,6 @@ const checkCache = (req, res, next) => {
     next();
   })
 }
-
 const getPontal = (req, res, next) => {
   client.get('Pontal', function(err, reply){
     res.send(reply)

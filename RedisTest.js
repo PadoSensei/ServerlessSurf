@@ -1,5 +1,8 @@
 const redis = require('redis');
 require("dotenv").config();
+const { scrapeData } = require('./src/cache_utils')
+
+// Repopulate Redis Server
 
 // For Emergency manipulation of Redis Cloud
 
@@ -13,8 +16,7 @@ test.on('connect', ( )=> {
   console.log('connected')
 })
 
-
-
+scrapeData(test)
 test.get('Pontal', function(err, reply){
  if(reply){
    console.log('Run it')

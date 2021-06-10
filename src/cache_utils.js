@@ -52,7 +52,6 @@ const scrapeData = async (client) => {
     fullBeachData.push(newBeach)
     const redisName =newBeach.name
     pushObjToRedis(redisName, newBeach, client)
-    
   }
     //push to Redis
     pushObjToRedis('beachData',fullBeachData, client)
