@@ -11,6 +11,9 @@ const router = express.Router();
 const BASE_ROUTE = '/.netlify/functions/index'
 router.use(checkCache)
 
+router.get('/cache', checkCache, () =>{
+})
+
 router.get('/pontal', getPontal,() => {
 });
 
