@@ -9,6 +9,7 @@ app.use(cors());
 
 const router = express.Router();
 const BASE_ROUTE = '/.netlify/functions/index'
+app.use(BASE_ROUTE, router);
 router.use(checkCache)
 
 router.get('/cache', checkCache, () =>{
@@ -37,9 +38,5 @@ router.get('/test', (req, res) => {
     "hello": "world"
   })
 })
-
-app.use(BASE_ROUTE, router);
-
-console.log("hello")
 
 module.exports.handler = serverless(app);

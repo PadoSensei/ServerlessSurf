@@ -18,7 +18,7 @@ test.on('connect', ( )=> {
 
 test.exists('beachData', (err, reply) =>{
   if(!reply){
-    //scrapeData(client)
+    scrapeData(test)
     console.log("Scraping Data...")
   }else {
     console.log('Data already in Redis!')
