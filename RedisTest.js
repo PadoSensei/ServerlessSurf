@@ -16,16 +16,25 @@ test.on('connect', ( )=> {
   console.log('connected')
 })
 
-scrapeData(test)
-test.get('Pontal', function(err, reply){
- if(reply){
-   console.log('Run it')
- }
-})
-
-test.keys('*', (err, reply) => {
-  if (err) return console.log(err);
-  for(let i = 0, len = reply.length; i < len; i++){
-    console.log(reply[i])
+test.exists('beachData', (err, reply) =>{
+  if(!reply){
+    //scrapeData(client)
+    console.log("Scraping Data...")
+  }else {
+    console.log('Data already in Redis!')
   }
 })
+
+// scrapeData(test)
+// test.get('Pontal', function(err, reply){
+//  if(reply){
+//    console.log('Run it')
+//  }
+// })
+
+// test.keys('*', (err, reply) => {
+//   if (err) return console.log(err);
+//   for(let i = 0, len = reply.length; i < len; i++){
+//     console.log(reply[i])
+//   }
+// })
